@@ -50,8 +50,14 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="TestCompare.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Omgtu.CollectionSortExcercise\Omgtu.CollectionSortExcercise.csproj">
+      <Project>{5936f846-d2bc-4e01-9c9b-3ce4e1487391}</Project>
+      <Name>Omgtu.CollectionSortExcercise</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
