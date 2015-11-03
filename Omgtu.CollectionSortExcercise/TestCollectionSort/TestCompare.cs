@@ -3,7 +3,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.IO;
 
-namespace TestCollectionSort
 namespace Omgtu.CollectionSortExcercise
 {
     [TestClass]
@@ -12,6 +11,26 @@ namespace Omgtu.CollectionSortExcercise
         internal List<Person> students;
         internal string sourcePath = @"group.txt";
 
+        public TestCompare()
+        {
+            students = new List<Person>();
+        }
+
+        internal void ReadGroup()
+        {
+            if (!File.Exists(sourcePath))
+                throw new FileNotFoundException();
+
+            string line;
+            using (StreamReader file = new StreamReader(this.sourcePath))
+            {
+                while ((line = file.ReadLine()) != null)
+                {
+                    Person student = new Person(line);
+                    this.students.Add(student);
+                }
+            }
+        }
 
         [TestMethod]
         public void TestPersonCollectionSortByName()
