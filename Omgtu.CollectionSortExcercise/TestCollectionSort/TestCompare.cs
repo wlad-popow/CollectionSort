@@ -16,17 +16,41 @@ namespace Omgtu.CollectionSortExcercise
         [TestMethod]
         public void TestNameCompareNull()
         {
-            Person personNull = new Person();
-            Person personNotNull = new Person(@"Бунин Иван РН-231");
-            Assert.AreEqual(-1, PersonComparer.CompareByName(personNull, personNotNull));
+            Person personLeft = new Person();
+            Person personRight = new Person(@"Бунин Иван РН-231");
+            Assert.AreEqual(-1, PersonComparer.CompareByName(personLeft, personRight));
         }
 
         [TestMethod]
         public void TestNameCompare()
         {
-            Person personNull = new Person(@"Мандельштам Осип РН-231");
-            Person personNotNull = new Person(@"Бунин Иван РН-231");
-            Assert.AreEqual(1, PersonComparer.CompareByName(personNull, personNotNull));
+            Person personLeft = new Person(@"Мандельштам Осип РН-231");
+            Person personRight = new Person(@"Бунин Иван РН-231");
+            Assert.AreEqual(1, PersonComparer.CompareByName(personLeft, personRight));
+        }
+
+        [TestMethod]
+        public void TestGroupNameSurnameCompareDifferentGroup()
+        {
+            Person personLeft = new Person(@"Бунин Иван РН-231");
+            Person personRight = new Person(@"Бунин Иван РН-131");
+            Assert.AreEqual(1, PersonComparer.CompareByGroupNameSurname(personLeft, personRight));
+        }
+
+        [TestMethod]
+        public void TestGroupNameSurnameCompareSameGroup()
+        {
+            Person personLeft = new Person(@"Мандельштам Осип РН-231");
+            Person personRight = new Person(@"Бунин Иван РН-231");
+            Assert.AreEqual(1, PersonComparer.CompareByGroupNameSurname(personLeft, personRight));
+        }
+
+        [TestMethod]
+        public void TestGroupNameSurnameCompareSameGroupName()
+        {
+            Person personLeft = new Person(@"Некрасов Иван РН-231");
+            Person personRight = new Person(@"Бунин Иван РН-231");
+            Assert.AreEqual(1, PersonComparer.CompareByGroupNameSurname(personLeft, personRight));
         }
 
     }

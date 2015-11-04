@@ -24,15 +24,20 @@ namespace Omgtu.CollectionSortExcercise
             this.Group = string.Empty;
         }
 
-        public Person(string nameSurnameGroup)
+        public Person(string surnameNameGroup)
         {
-            string[] splittedStrings = nameSurnameGroup.Split(' ');
+            string[] splittedStrings = surnameNameGroup.Split(' ');
             if (splittedStrings.Length !=3)
                 throw new ArgumentException("Строка не соответствует шаблону");
 
-            this.Name = splittedStrings[0];
-            this.Surname = splittedStrings[1];
+            this.Surname = splittedStrings[0];
+            this.Name = splittedStrings[1];
             this.Group = splittedStrings[2];
+        }
+
+        public string ToString()
+        {
+            return String.Format("{0} {1} {2}", this.Name, this.Surname, this.Group);
         }
     }
 }
