@@ -74,9 +74,9 @@ namespace Omgtu.CollectionSortExcercise
             List<string> expectedList = new List<string>();
             foreach (Person student in students)
             {
-                string expected = student.Group.Substring(0, 4);
-                expected += student.Name.Substring(0, 4);
-                expected += student.Surname.Substring(0, 4);
+                string expected = student.Group;
+                expected +=" "+ student.Name;
+                expected +=" "+ student.Surname;
 
                 expectedList.Add(expected);
             }
@@ -86,9 +86,9 @@ namespace Omgtu.CollectionSortExcercise
 
             for (int i = 0; i < students.Count; i++)
             {
-                string actual = students[i].Group.Substring(0, 4);
-                actual += students[i].Name.Substring(0, 4);
-                actual += students[i].Surname.Substring(0, 4);
+                string actual = students[i].Group;
+                actual += " "+students[i].Name;
+                actual += " "+students[i].Surname;
 
                 Assert.AreEqual(expectedList[i], actual);
             }
