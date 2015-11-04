@@ -45,6 +45,13 @@ namespace Omgtu.CollectionSortExcercise
             Assert.AreEqual(1, PersonComparer.CompareByGroupNameSurname(personLeft, personRight));
         }
 
+        [TestMethod]
+        public void TestGroupNameSurnameCompareSameGroupName()
+        {
+            Person personLeft = new Person(@"Некрасов Иван РН-231");
+            Person personRight = new Person(@"Бунин Иван РН-231");
+            Assert.AreEqual(1, PersonComparer.CompareByGroupNameSurname(personLeft, personRight));
+        }
 
     }
 }
