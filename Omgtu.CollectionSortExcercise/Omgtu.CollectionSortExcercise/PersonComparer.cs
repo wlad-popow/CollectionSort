@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Omgtu.CollectionSortExcercise
 {
-    public sealed static class PersonComparer 
+    public static class PersonComparer 
     {
         public static int CompareByName(Person leftPerson, Person rightPerson)
         {
