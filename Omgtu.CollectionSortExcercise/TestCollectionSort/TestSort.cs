@@ -18,9 +18,9 @@ namespace Omgtu.CollectionSortExcercise
 
         internal void ReadGroup()
         {
-            string FifleFullPath = Path.GetFullPath(sourcePath);
+            string fileFullPath = Path.GetFullPath(sourcePath);
 
-            if (!File.Exists(FifleFullPath))
+            if (!File.Exists(fileFullPath))
                 throw new FileNotFoundException();
 
             string line;
