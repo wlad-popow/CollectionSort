@@ -34,5 +34,10 @@ namespace Omgtu.CollectionSortExcercise
             this.Name = splittedStrings[1];
             this.Group = splittedStrings[2];
         }
+
+        public string ToString()
+        {
+            return String.Format("{0} {1} {2}", this.Name, this.Surname, this.Group);
+        }
     }
 }
